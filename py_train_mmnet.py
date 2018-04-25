@@ -70,18 +70,12 @@ for i in range(0, 10000):
     weight_decay_str = str(weight_decay_list[random.randint(0, len(weight_decay_list)-1)])
 
 
-    print("kernel_sizes_str:" + kernel_sizes_str)
-
-    print("number_filter_maps:" + number_filter_maps)
-
-    print("fc_dropout:" + fc_dropout)
-
-    print("embed_dropout:" + embed_dropout)
-
-    print("batch_size:" + batch_size)
-
-    print("bce_weight_str:" + bce_weight_str)
-
+    print("kernel_sizes_str: " + kernel_sizes_str)
+    print("number_filter_maps: " + number_filter_maps)
+    print("fc_dropout: " + fc_dropout)
+    print("embed_dropout: " + embed_dropout)
+    print("batch_size: " + batch_size)
+    print("bce_weight_str: " + bce_weight_str)
     print("weight_decay: " + weight_decay_str)
     
     
@@ -115,9 +109,9 @@ for i in range(0, 10000):
     #Batch Normalization
     batch_norm_bool = random.uniform(0,1)
 
-    if batch_norm_bool > 0.5: # If batch norm being used:
+    if batch_norm_bool > 0.7: # If batch norm being used:
 
-	    var_list = ["./train_v3.sh",                   # Shell script
+	    var_list = ["./train.sh",                   # Shell script
 
 		        "training/training_mmnet.py",        # Training script
 
@@ -131,11 +125,11 @@ for i in range(0, 10000):
 
 		        "5",                               # Num epochs
                 
-                str(len_train),
+                	str(len_train),
                    
-                str(len_val),
+                	str(len_val),
                    
-                str(len_test),
+                	str(len_test),
 
 		        "--embed-dropout-bool",
 
@@ -179,31 +173,31 @@ for i in range(0, 10000):
 
 		        "True",
 
-                "--conv-aux-loss-wt",
+                	"--conv-aux-loss-wt",
 
-                conv_aux_loss_wt_str,
+                	conv_aux_loss_wt_str,
 
     			"--struc-aux-loss-wt",
 
-                struc_aux_loss_wt_str,
+                	struc_aux_loss_wt_str,
                 
-                "--struc-layer-size-list",
+                	"--struc-layer-size-list",
 
-                fc_layer_sizes_str,
+                	fc_layer_sizes_str,
 
-                "--struc-activation",
+                	"--struc-activation",
 
-                activation_layer,
+                	activation_layer,
 
-                "--struc-dropout-list",
+                	"--struc-dropout-list",
 
-                struc_dropout_list_str]
+                	struc_dropout_list_str]
 
     else:
 
-	    var_list = ["./train_v3.sh",                   # Shell script
+	    var_list = ["./train.sh",                   # Shell script
 
-                "training/training_mmnet_vM1.py",        # Training script
+                "training/training_mmnet.py",        # Training script
 
                 "../../../Data/sorted_sums_matched_struc_train.csv", # Data path
 
@@ -257,20 +251,25 @@ for i in range(0, 10000):
 
                 weight_decay_str,
 
-        		"--conv-aux-loss-wt",
+        	"--conv-aux-loss-wt",
 
                 conv_aux_loss_wt_str,
 
-        		"--struc-aux-loss-wt",
+        	"--struc-aux-loss-wt",
 
                 struc_aux_loss_wt_str,
                 
                 "--struc-layer-size-list",
-                fc_layer_sizes_str,
-                "--struc-activation",
-                activation_layer,
-                "--struc-dropout-list",
-                struc_dropout_list_str]
+                
+		fc_layer_sizes_str,
+                
+		"--struc-activation",
+                
+		activation_layer,
+                
+		"--struc-dropout-list",
+                
+		struc_dropout_list_str]
 
 
 
