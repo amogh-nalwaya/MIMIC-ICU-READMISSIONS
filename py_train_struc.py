@@ -43,7 +43,7 @@ for i in range(0, 300):
 
     if embed_dropout_list_str == '':
         var_list = ["./train.sh",
-                "Structured/struc_net.py",
+                "structured/struc_net.py",
                 "../../../Data/struc_data_reversed.svmlight",
                 "../../../Models/",
                 "4",
@@ -58,7 +58,7 @@ for i in range(0, 300):
                 bce_weight_str]
     else:
         var_list = ["./train.sh",
-                "Structured/struc_net.py",
+                "structured/struc_net.py",
                 "../../../Data/struc_data_reversed.svmlight",
                 "../../../Models/",
                 "4",
