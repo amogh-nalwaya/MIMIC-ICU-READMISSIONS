@@ -1,21 +1,13 @@
 import subprocess
-
 import shlex
-
 import random
-
 import numpy as np
 
 kernel_sizes_str = ""
-
 number_filter_maps = ""
-
 fc_dropout = ""
-
 embed_dropout = ""
-
 batch_size = ""
-
 weight_decay = ""
 
 #Randomizing number of kernels and kernel sizes
@@ -31,7 +23,6 @@ for i in range(0, 10000):
     kernel_sizes = random.sample(range(2, 9), number_kernels)
 
     kernel_sizes_str = ','.join(map(str, kernel_sizes))
-
 
     #Randomizing number of feature maps
     number_filter_maps = str(random.randint(100, 500))
@@ -62,22 +53,14 @@ for i in range(0, 10000):
 
 
     print("kernel_sizes_str:" + kernel_sizes_str)
-
     print("number_filter_maps:" + number_filter_maps)
-
     print("fc_dropout:" + fc_dropout)
-
     print("embed_dropout:" + embed_dropout)
-
     print("batch_size:" + batch_size)
-
     print("bce_weight_str:" + bce_weight_str)
-
     print("weight_decay: " + weight_decay_str)
 
-
-
-    var_list = ["./train_v3.sh",                   # Shell script
+    var_list = ["./train.sh",                   # Shell script
 
                 "training/training_conv_encoder.py",        # Training script
 
@@ -127,32 +110,16 @@ for i in range(0, 10000):
 
                 weight_decay_str]
 
-
-
     string = ""
-
-
 
     for idx in range(len(var_list)):
 
-
-
         if idx < (len(var_list) - 1):
-
-
 
             string = string + var_list[idx] + ' '
 
-
-
         else:
 
-
-
             string += var_list[idx]
-
-
-
-
 
     subprocess.call(shlex.split(string))
