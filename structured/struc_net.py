@@ -21,7 +21,7 @@ file_dir = os.path.dirname(abs_path)
 parent_dir = os.path.dirname(file_dir)
 sys.path.append(parent_dir)
 
-from evaluation import evaluation_vM3 as evaluation
+from evaluation import evaluation as evaluation
 
 # Need to pass array of hidden layer sizes
 
