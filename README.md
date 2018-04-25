@@ -36,3 +36,4 @@
 * Random hyperparameter search is performed through the wrapper *py_train_mmnet.py*.
 * A single hyperparameter configuration can be run through *train_mmnet.sh*. The parameters to pass to this script can be found at the bottom of *training_mmnet.py*.
 
+Built on https://github.com/jamesmullenbach/caml-mimic
